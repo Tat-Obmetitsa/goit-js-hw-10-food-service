@@ -28,7 +28,6 @@ function changeTheme(evt) {
   localStorage.setItem(STORAGE_KEY, evt.target.checked);
 }
 
-
 // function changeTheme() {
 //   if (refs.iconTheme.checked) {
 //     setDarkTheme();

@@ -198,7 +198,10 @@ body.dark-theme {
   background-color: #3f51b5;
   color: #fff;
 }
-
+.tag-list__item:hover {
+  background-color:   #1976d2;
+  cursor: pointer;
+}
 .button {
   display: inline-flex;
   align-items: center;
