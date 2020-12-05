@@ -12,6 +12,7 @@ const STORAGE_KEY = 'theme';
 refs.iconTheme.addEventListener('change', changeTheme);
 defaultTheme();
 
+// Вариант 1
 function defaultTheme() {
   const theme = localStorage.getItem(STORAGE_KEY);
   if (theme === 'true') {
@@ -27,6 +28,7 @@ function changeTheme(evt) {
   refs.bodyTheme.classList.toggle(Theme.LIGHT);
   localStorage.setItem(STORAGE_KEY, evt.target.checked);
 }
+// Вариант 2
 
 // function changeTheme() {
 //   if (refs.iconTheme.checked) {
@@ -45,3 +47,20 @@ function changeTheme(evt) {
 //   refs.bodyTheme.classList.add(Theme.LIGHT);
 //   refs.bodyTheme.classList.remove(Theme.DARK);
 // }
+
+// Вариант от ментора
+
+// function changeTheme(e) {
+//   if (e.target.checked) {
+// 	setTheme(Theme.LIGHT, Theme.DARK);
+//   } else {
+//     setTheme(Theme.DARK, Theme.LIGHT);
+//   }
+// }
+// function setTheme(oldTheme, newTheme) {
+//   refs.bodyTheme.classList.add(newTheme);
+//   refs.bodyTheme.classList.remove(oldTheme);
+//   localStorage.setItem(STORAGE_KEY, newTheme);
+
+const listItem = document.querySelector('.tag - list__item');
+listItem.addEventListener('click', findItem);
