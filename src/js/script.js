@@ -10,19 +10,22 @@ const refs = {
 const STORAGE_KEY = 'theme';
 
 refs.iconTheme.addEventListener('change', changeTheme);
+defaultTheme();
 
 function defaultTheme() {
-  if (localStorage.classList === Theme.DARK) {
+  const theme = localStorage.getItem(STORAGE_KEY);
+  if (theme === 'true') {
     refs.bodyTheme.classList.add(Theme.DARK);
-    refs.iconTheme.cheched = true;
+    refs.iconTheme.checked = true;
+  } else {
+    refs.bodyTheme.classList.add(Theme.LIGHT);
   }
 }
-defaultTheme();
 
 function changeTheme(evt) {
   refs.bodyTheme.classList.toggle(Theme.DARK);
   refs.bodyTheme.classList.toggle(Theme.LIGHT);
-  localStorage.setItem(evt.target.checked);
+  localStorage.setItem(STORAGE_KEY, evt.target.checked);
 }
 
 
